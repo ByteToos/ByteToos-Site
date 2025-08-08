@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #212121;
+}
+
+a{
+    color: #b9b9b9;
+    position: fixed;
+}
+
+.telegram a{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    text-decoration: none;
+    transform: translateX(-50%) translateY(0%);
+    transition: transform 0.6s ease;
+}
+
+.telegram a:hover{
+    text-decoration: underline;
+}
+
+.github a{
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    text-decoration: none;
+    transform: translateX(-50%) translateY(-400%);
+    transition: transform 0.6s ease;
+}
+
+.github a:hover{
+    text-decoration: underline;
+}
+
+.none a{
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    text-decoration: none;
+    transform: translateX(-50%) translateY(-120%);
+    transition: transform 0.6s ease;
+}
+
+.none a:hover{
+    text-decoration: underline;
+}
+
+.text1{
+    position: absolute;
+    left: 900px;
+    top: 350px; 
+    transition: transform 0.5s ease; 
+    color: rgb(214, 214, 214);
+}
+
+.text1:hover{
+    animation: button 8s linear infinite;
+    transform: scale(1.2);
+}
+
+@keyframes button{
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 400%;
+    }
+}
+
+.text1::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #09d62b, #22a9e7, #ff3bf5, #09d62b );
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.text1:hover::before{
+    filter: blur(20px);
+    opacity: 1;
+    animation: button 8s linear infinite;
+}
+
+@media (max-width: 480px){
+  .none a{
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    text-decoration: none;
+    transform: translateX(-50%) translateY(-50%);
+    transition: transform 0.6s ease;
+}
+}
